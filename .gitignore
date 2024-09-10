@@ -1,0 +1,11 @@
+# dev-environment
+.env
+.venv/
+build/
+dist/
+__pycache__/
+__init__.py
+
+# files
+sound_device.txt
+test.py
