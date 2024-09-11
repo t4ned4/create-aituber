@@ -22,10 +22,10 @@ class ExampleSystem:
         pass
 
     def talk_with_comment(self) -> bool:
-        print('コメントを読み込みます…')
+        print('Loading comments…')
         comment = self.youtube_comment_adapter.get_comment()
         if comment is None:
-            print('コメントが読み込めませんでした。')
+            print("Comments couldn't be loaded ")
             return False
         response_text = self.openai_adapter.create_chat(self.thread, comment)
         data, rate = self.voice_adapter.get_voice(response_text)

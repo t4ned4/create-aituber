@@ -10,23 +10,9 @@ class ConnectOBS:
         host = os.environ.get('OBS_WS_HOST')
         port = os.environ.get('OBS_WS_PORT')
 
-        # 設定されていない場合はエラーを表示
         if (password is None or host is None or port is None):
-            raise Exception('OBSが未設定です')
+            raise Exception('OBS not configured')
         self.ws = obs.ReqClient(host=host, port=port, password=password)
-
-    def set_question(self, text: str):
-        self.ws.set_input_settings(
-            name='Question',
-            settings={'text': text},
-            overlay=True)
-
-    def set_answer(self, text: str):
-        self.ws.set_input_settings(
-            name='Answer',
-            settings={'text': text},
-            overlay=True
-        )
 
     def set_test(self, text: str):
         self.ws.set_input_settings(
@@ -36,7 +22,7 @@ class ConnectOBS:
         )
 
 
-# ファイルを直接指定したとき
 if __name__ == '__main__':
     test_txt = 'This is a test.'
-    ConnectOBS.set_answer(test_txt)
+    connext_obs = ConnectOBS()
+    connext_obs.set_test(test_txt)

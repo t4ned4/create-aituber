@@ -29,7 +29,7 @@ class PlaySound:
                 output_device_id = device['index']
                 break
         if output_device_id is None:
-            print('output_deviceが見つかりませんでした')
+            print('Not Found output_device')
             exit()
             return output_device_id
 
