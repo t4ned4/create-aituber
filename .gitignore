@@ -1,5 +1,4 @@
 # dev-environment
-.env
 .venv/
 build/
 dist/
