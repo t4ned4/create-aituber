@@ -29,7 +29,5 @@ class ExampleSystem:
             return False
         response_text = self.openai_adapter.create_chat(self.thread, comment)
         data, rate = self.voice_adapter.get_voice(response_text)
-        self.obs_adapter.set_question(comment)
-        self.obs_adapter.set_answer(response_text)
         self.play_sound.play_sound(data, rate)
         return True
