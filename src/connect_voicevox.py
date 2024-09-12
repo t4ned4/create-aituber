@@ -44,5 +44,5 @@ class ConnectVoicevox:
 
 if __name__ == "__main__":
     voicevox = ConnectVoicevox()
-    data, sample_rate = voicevox.get_voice('こんにちは')
+    data, sample_rate = voicevox.get_voice('test')
     print(sample_rate)

@@ -17,13 +17,13 @@ class ConnectComments:
 
     def __get_comments(self):
         if self.chat.is_alive() is False:
-            print('開始していません')
+            print('Streaming is not started')
             return None
         while self.chat.is_alive():
-            print("コメントを読み込んでいます")
+            print("Loading comments...")
             comments = list(self.chat.get().sync_items())
             if comments == []:
-                print('コメントが取得できませんでした')
+                print('Failed to load comments')
             else:
                 return comments
 

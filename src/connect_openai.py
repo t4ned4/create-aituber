@@ -20,7 +20,7 @@ class ConnectOpenAI:
         return self.thread
 
     def create_chat(self, thread, question):
-        print("APIからの応答を作成しています")
+        print("Waiting for API response... ")
         print(self.thread.id)
         if not question:
             question = question
@@ -58,4 +58,4 @@ if __name__ == '__main__':
     print(prompt)
     adapter = ConnectOpenAI()
     thread = adapter.create_thread()
-    response_text = adapter.create_chat(thread, "自己紹介してください")
+    response_text = adapter.create_chat(thread, "please introduce yourself")

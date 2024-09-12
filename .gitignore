@@ -7,5 +7,6 @@ __pycache__/
 __init__.py
 
 # files
-sound_device.txt
 test.py
+sound_device.txt
+memo.txt
