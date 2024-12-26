@@ -1,6 +1,6 @@
-import pytchat
-
 import os
+
+import pytchat
 
 
 class ConnectComments:
@@ -11,11 +11,13 @@ class ConnectComments:
         comments = self.__get_comments()
         if comments is None:
             return None
+        # Get latest comment
         message = comments[-1]
         print(message.message)
         return message.message
 
     def __get_comments(self):
+        # Check streaming state
         if self.chat.is_alive() is False:
             print('Streaming is not started')
             return None

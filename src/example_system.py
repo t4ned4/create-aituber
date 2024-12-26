@@ -31,3 +31,8 @@ class ExampleSystem:
         data, rate = self.voice_adapter.get_voice(response_text)
         self.play_sound.play_sound(data, rate)
         return True
+
+
+if __name__ == '__main__':
+    example_system = ExampleSystem()
+    example_system.talk_with_comment()

@@ -5,16 +5,19 @@ import soundfile
 
 
 class ConnectVoicevox:
+    # VOICEVOX URL
     URL = 'http://127.0.0.1:50021/'
 
     def __init__(self) -> None:
         pass
 
     def __create_audio_query(self, text: str, speaker_id: int) -> json:
+        # configure voicevox content
         item_data = {
             'text': text,
             'speaker':  speaker_id
         }
+        # Post item_data to 'audio_query'
         response = requests.post(self.URL+'audio_query', params=item_data)
         return response.json()
 
@@ -26,13 +29,13 @@ class ConnectVoicevox:
             'accept': 'audio/wav',
             'Content-Type': 'application/json'
         }
+        # Post query_data to 'synthesis' and get audio data
         res = requests.post(self.URL + 'synthesis', params=a_params,
                             data=json.dumps(query_data), headers=headers)
-        print(res.status_code)
         return res.content
 
     def get_voice(self, text: str):
-        speaker_id = 1
+        speaker_id = 1  # select 'あまあま ずんだもん'
         query_data: json = self.__create_audio_query(text,
                                                      speaker_id=speaker_id)
         audio_bytes = self.__create_request_audio(query_data,

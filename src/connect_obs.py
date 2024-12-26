@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 class ConnectOBS:
     def __init__(self) -> None:
         load_dotenv()
+        # Configure OBS studio
         password = os.environ.get('OBS_WS_PASSWORD')
         host = os.environ.get('OBS_WS_HOST')
         port = os.environ.get('OBS_WS_PORT')
@@ -15,6 +16,7 @@ class ConnectOBS:
         self.ws = obs.ReqClient(host=host, port=port, password=password)
 
     def set_test(self, text: str):
+        # Change text-content named "test"
         self.ws.set_input_settings(
             name='test',
             settings={'text': text},
