@@ -4,7 +4,7 @@
 ## はじめに
 このプロジェクト上のコードは[*阿部 由延(@sald_ra)氏*](https://x.com/sald_ra)の著書[『
 AITuberを作ってみたら生成AIプログラミングがよくわかった件』](https://bookplus.nikkei.com/atcl/catalog/23/10/31/01079/)から
-[github](https://github.com/sr2mg/aituber_python_programing_example)にて公開されているコードを参考に作成したものです。
+githubにて公開されているコードを参考に作成したものです。
 書籍との主な相違点は下記2点となります。
 * Python3.11.5 ⇒ Python3.12.4
 * openai0.28.1 ⇒ openai1.43.0
