@@ -9,3 +9,4 @@ __init__.py
 test.py
 sound_device.txt
 memo.txt
+setup.py
